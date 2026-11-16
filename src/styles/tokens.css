@@ -1,0 +1,51 @@
+/* Design tokens. Three brand colours only; everything else is a tint of them. */
+:root {
+  --ink: #15263b;
+  --oat: #e9e5d8;
+  --amber: #f18d46;
+
+  --font: 'Archivo Variable', 'Archivo', 'Helvetica Neue', Helvetica, Arial, system-ui, sans-serif;
+
+  /* Fluid type scale */
+  --t-small: clamp(0.8rem, 0.76rem + 0.16vw, 0.9rem);
+  --t-body: clamp(1rem, 0.95rem + 0.22vw, 1.14rem);
+  --t-lead: clamp(1.2rem, 1.05rem + 0.7vw, 1.65rem);
+  --t-h3: clamp(1.5rem, 1.15rem + 1.6vw, 2.6rem);
+  --t-display: clamp(2.5rem, 1.3rem + 5.4vw, 6.4rem);
+  --t-poster: clamp(3.6rem, 0.4rem + 15.4vw, 17rem);
+
+  --margin: max(20px, 4vw);
+  --gap: clamp(14px, 1.6vw, 28px);
+  --section: clamp(96px, 14vw, 220px);
+  --radius: 4px;
+  --ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --bg: var(--ink);
+  --fg: var(--oat);
+  --muted: rgba(233, 229, 216, 0.68);
+  --line: rgba(233, 229, 216, 0.18);
+  --accent: var(--amber);
+  --accent-text: var(--amber);
+  --holo: #8fc0f2;
+  --glass: rgba(233, 229, 216, 0.055);
+  --glass-line: rgba(233, 229, 216, 0.16);
+  --on-accent: var(--ink);
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+  --bg: var(--oat);
+  --fg: var(--ink);
+  --muted: rgba(21, 38, 59, 0.74);
+  --line: rgba(21, 38, 59, 0.2);
+  --accent: var(--amber);
+  /* Amber on oat is too faint for text, so text uses a deeper tint of it. */
+  --accent-text: #a04a0c;
+  --holo: #1f4f86;
+  --glass: rgba(255, 255, 255, 0.34);
+  --glass-line: rgba(21, 38, 59, 0.14);
+  --on-accent: var(--ink);
+}
